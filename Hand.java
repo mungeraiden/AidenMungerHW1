@@ -4,10 +4,12 @@ public class Hand {
 
     private ArrayList<Dice> diceList;
     private ArrayList<Dice> unused;
+    private Meld meld;
 
     public Hand() {
         diceList = new ArrayList<>();
         unused = new ArrayList<>();
+        meld = new Meld();
 
         for (int i = 0; i < 6; i++) {
             Dice die = new Dice();
@@ -28,6 +30,17 @@ public class Hand {
                 System.out.print(die.getDiceArt()[row] + " ");
             }
             System.out.println();
+
         }
+        System.out.println("    A         B         C         D         E         F");
+    }
+
+    public void addToMeld(int index) {
+        Dice die = unused.get(index);
+        meld.addDie(die);
+    }
+
+    public void displayMeld() {
+        meld.displayMeld();
     }
 }

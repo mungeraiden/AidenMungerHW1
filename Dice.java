@@ -64,4 +64,8 @@ public class Dice {
             System.out.println(row);
         }
     }
+
+    public String[] getDiceArt() {
+        return diceArt[value - 1];
+    }
 }

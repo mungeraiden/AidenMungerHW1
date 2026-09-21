@@ -12,6 +12,9 @@ public class Farkle {
         hand.addToMeld(0);
 
         hand.displayMeld();
+
+        hand.displayUnusedDice();
+        
     }
 
 }

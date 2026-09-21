@@ -36,8 +36,10 @@ public class Hand {
     }
 
     public void addToMeld(int index) {
-        Dice die = unused.get(index);
-        meld.addDie(die);
+        //Dice die = unused.get(index);
+        //meld.addDie(die);
+        Dice removedDie = unused.remove(index);
+        meld.addDie(removedDie);
     }
 
     public void displayMeld() {

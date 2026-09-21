@@ -8,34 +8,36 @@ public class Menu {
 
         while (running) {
             System.out.println("\n--- Farkle Menu ---");
-            System.out.println("1. Add die to meld");
-            System.out.println("2. Remove die from meld");
-            System.out.println("3. View current meld");
-            System.out.println("4. Calculate score");
-            System.out.println("5. Bank Points");
+            System.out.println("A. Add die to meld");
+            System.out.println("B. Remove die from meld");
+            System.out.println("C. View current meld");
+            System.out.println("D. Calculate score");
+            System.out.println("E. Bank Points");
             System.out.println("Choose an option: ");
         
-            String choice = scanner.nextLine();
+            String choice = scanner.nextLine().toUpperCase();
 
 
             switch (choice) {
-                case "1":
+                case "A":
                     // Add die to meld
-                    System.out.println("Adding die to meld...");
+                    System.out.println("Select a die to add to the meld (A-F): ");
+                    String dieChoice = scanner.nextLine().toUpperCase();
+                    System.out.println("You chose to add die: " + dieChoice);
                     break;
-                case "2":
+                case "B":
                     // Remove die from meld
                     System.out.println("Removing die from meld...");
                     break;
-                case "3":
+                case "C":
                     // View current meld
                     System.out.println("Viewing current meld...");
                     break;
-                case "4":
+                case "D":
                     // Calculate score
                     System.out.println("Calculating score...");
                     break;
-                case "5":
+                case "E":
                     // Bank Points
                     System.out.println("Banking points...");
                     break;

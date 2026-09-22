@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Menu {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        
+
         boolean running = true;
 
         while (running) {
@@ -13,10 +13,10 @@ public class Menu {
             System.out.println("C. View current meld");
             System.out.println("D. Calculate score");
             System.out.println("E. Bank Points");
+            System.out.println("Q. Quit");
             System.out.println("Choose an option: ");
-        
-            String choice = scanner.nextLine().toUpperCase();
 
+            String choice = scanner.nextLine().toUpperCase();
 
             switch (choice) {
                 case "A":
@@ -40,6 +40,11 @@ public class Menu {
                 case "E":
                     // Bank Points
                     System.out.println("Banking points...");
+                    break;
+                case "Q":
+                    // Quit
+                    System.out.println("Quitting the game. Goodbye!");
+                    running = false;
                     break;
                 default:
                     System.out.println("Invalid option. Please try again.");

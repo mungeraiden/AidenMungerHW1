@@ -15,10 +15,7 @@ public class Farkle {
 
         hand.displayUnusedDice();
         
-
         Menu.main(args);
     }
 
 }
-
-// 

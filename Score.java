@@ -42,29 +42,30 @@ public class Score{
         }
 
         // Triples or more
-        for (int face = 1; face <= 6; face++){
+        for (int face = 1; face <= 6; face++) {
             int count = counts[face];
 
-            if (count >= 3){
+            // Triples and beyond
+            if (count >= 3) {
+                if (face == 1) {
+                    score += 1000;                 // triple 1s
+                    score += (count - 3) * 100;    // extra 1s
+                } else {
+                    score += face * 100;           // triple face
+                    score += (count - 3) * (face * 100); // extra dice beyond triple
+                }
+            }
+
+            // Single 1s and 5s (only if fewer than 3)
+            if (count < 3) {
                 if (face == 1){
-                    score += 1000;
+                    score += count * 100;
+                }
+                if (face == 5){
+                    score += count * 50;
                 }
 
-                score += (count - 3) * 100;
-            } else {
-                score += face * 100;
-
-                score += (count - 3) * (face * 100);
             }
-        }
-
-        // Single 1s
-        if (counts[1] < 3) {
-            score += counts[1] * 100;
-        }
-
-        if (counts[5] < 3){
-            score += counts[5] * 50;
         }
 
         return score;

@@ -71,4 +71,20 @@ public class Hand {
 
         return score == 0;
     }
+
+    public void rerollUnused(){
+        for (Dice d : unused) {
+            d.roll();
+        }
+    }
+
+    public Meld getMeld() {
+        return meld;
+    }
+
+    public int meldSize() {
+        return meld.size();
+    }
+
+
 }

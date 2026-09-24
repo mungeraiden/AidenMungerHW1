@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Menu {
 
-    public static void run(Hand hand) {
+    public static void run(Turn turn, Hand hand) {
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
 
@@ -36,7 +36,18 @@ public class Menu {
                     break;
 
                 case "B":
-                    System.out.println("Remove from meld (not implemented yet).");
+                    hand.displayMeld();
+                    System.out.print("Select a die letter to remove: ");
+                    String removeLetter = scanner.nextLine().trim().toUpperCase();
+
+                    int removeIndex = removeLetter.charAt(0) - 'A';
+
+                    if (removeIndex >= 0 && removeIndex < hand.meldSize()) {
+                        hand.removeFromMeld(removeIndex);
+                        System.out.println("Removed die " + removeLetter + " from meld.");
+                    } else { 
+                        System.out.println("Invalid selection.");
+                    }
                     break;
 
                 case "C":
@@ -50,12 +61,16 @@ public class Menu {
                     break;
 
                 case "E":
-                    System.out.println("Banking points (not implemented yet).");
+                    turn.bank();
                     break;
 
                 case "F":
                     System.out.println("Quitting game.");
                     running = false;
+                    break;
+
+                case "R":
+                    turn.reroll();
                     break;
 
                 default:

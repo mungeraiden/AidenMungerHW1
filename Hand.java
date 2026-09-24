@@ -59,4 +59,16 @@ public class Hand {
     public void displayMeld() {
         meld.displayMeld();
     }
+
+    public boolean isFarkle() {
+        Meld temp = new Meld();
+
+        for (Dice d: unused){
+            temp.addDie(d);
+        }
+
+        int score = Score.calculate(temp);
+
+        return score == 0;
+    }
 }

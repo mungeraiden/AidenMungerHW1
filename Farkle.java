@@ -1,21 +1,12 @@
 public class Farkle {
-    
+
     public static void main(String[] args) {
         Hand hand = new Hand();
-
-        System.out.println("Starting Hand: ");
         hand.rollAllDice();
+
+        System.out.println("Starting Hand:");
         hand.displayUnusedDice();
 
-        System.out.println("");
-        System.out.println("Moving die A to meld...");
-        hand.addToMeld(0);
-
-        hand.displayMeld();
-
-        hand.displayUnusedDice();
-        
-        Menu.main(args);
+        System.out.println("Thanks for playing Zag Farkle!");
     }
-
 }

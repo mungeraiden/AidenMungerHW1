@@ -35,11 +35,25 @@ public class Hand {
         System.out.println("    A         B         C         D         E         F");
     }
 
+    public int unusedSize() {
+        return unused.size();
+    }
+
+
     public void addToMeld(int index) {
         //Dice die = unused.get(index);
         //meld.addDie(die);
         Dice removedDie = unused.remove(index);
         meld.addDie(removedDie);
+    }
+
+    public void removeFromMeld(int index) {
+        if (index >= 0 && index < meld.size()){
+            Dice die = meld.getDice().remove(index);
+            unused.add(die);
+        } else {
+            System.out.println("Invalid meld index.");
+        }
     }
 
     public void displayMeld() {

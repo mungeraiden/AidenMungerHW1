@@ -19,7 +19,7 @@ public class Farkle {
         }
         System.out.println("Hello, " + username + "! Let's start the game.");
 
-        Turn turn = new Turn();
+        Turn turn = new Turn(username);
         turn.run();
 
         scanner.close();

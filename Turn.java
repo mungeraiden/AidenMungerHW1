@@ -5,7 +5,8 @@ public class Turn {
     private int totalScore;
     private boolean turnActive;
 
-    public Turn() {
+    public Turn(String username) {
+        System.out.println(username + ", it is your turn! Rolling dice...");
         hand = new Hand();
         totalScore = 0;
         turnActive = true;

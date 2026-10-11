@@ -15,7 +15,7 @@ public class Menu {
             System.out.println("C - Show current meld");
             System.out.println("D - Show unused dice");
             System.out.println("E - Bank points");
-            System.out.println("F - Quit");
+            System.out.println("Q - Quit");
             System.out.print("Choose an option: ");
 
             String choice = scanner.nextLine().trim().toUpperCase();
@@ -66,8 +66,8 @@ public class Menu {
                     turn.bank();
                     break;
 
-                case "F":
-                    System.out.println("Quitting game.");
+                case "Q":
+                    turn.quit();
                     running = false;
                     break;
 

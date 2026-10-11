@@ -45,31 +45,36 @@ public class Turn {
     }
 
     public void reroll() {
-    int meldScore = Score.calculate(hand.getMeld());
+        int meldScore = Score.calculate(hand.getMeld());
 
-    if (meldScore == 0) {
-        System.out.println("Cannot reroll — meld score is 0.");
-        return;
+        if (meldScore == 0) {
+            System.out.println("Cannot reroll — meld score is 0.");
+            return;
+        }
+
+        if (hand.unusedSize() == 0) {
+            System.out.println("HOT HAND! Rolling 6 new dice!");
+            hand = new Hand();
+            hand.rollAllDice();
+        } else {
+            System.out.println("Rerolling unused dice...");
+            hand.rerollUnused();
+        }
+
+        hand.displayUnusedDice();
+
+        if (hand.isFarkle()) {
+            System.out.println("FARKLE! No scoring combos available.");
+            System.out.println("Your turn ends with 0 points.");
+            totalScore = 0;
+            turnActive = false;
+        }
     }
 
-    if (hand.unusedSize() == 0) {
-        System.out.println("HOT HAND! Rolling 6 new dice!");
-        hand = new Hand();
-        hand.rollAllDice();
-    } else {
-        System.out.println("Rerolling unused dice...");
-        hand.rerollUnused();
-    }
-
-    hand.displayUnusedDice();
-
-    if (hand.isFarkle()) {
-        System.out.println("FARKLE! No scoring combos available.");
-        System.out.println("Your turn ends with 0 points.");
-        totalScore = 0;
+    public void quit() {
+        System.out.println("Quitting turn.");
+        System.out.println("Total score: " + totalScore);
         turnActive = false;
     }
-}
-
 
 }

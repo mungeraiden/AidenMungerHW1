@@ -6,6 +6,8 @@ public class Menu {
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
 
+        
+
         while (running) {
             System.out.println("\n=== Farkle Menu ===");
             System.out.println("A - Add die to meld");

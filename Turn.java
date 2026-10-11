@@ -53,9 +53,11 @@ public class Turn {
         }
 
         if (hand.unusedSize() == 0) {
-            System.out.println("HOT HAND! Rolling 6 new dice!");
-            hand = new Hand();
-            hand.rollAllDice();
+            System.out.println("==============================");
+            System.out.println("==========HOT HAND!===========");
+            System.out.println("==============================");
+            System.out.println("You used all 6 dice!");
+            System.out.println("Would you like to roll 6 new dice, or bank and end your turn?");
         } else {
             System.out.println("Rerolling unused dice...");
             hand.rerollUnused();

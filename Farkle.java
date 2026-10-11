@@ -21,5 +21,8 @@ public class Farkle {
 
         Turn turn = new Turn();
         turn.run();
+
+        scanner.close();
     }
+       
 }

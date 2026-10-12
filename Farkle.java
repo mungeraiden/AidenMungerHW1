@@ -24,5 +24,10 @@ public class Farkle {
 
         scanner.close();
     }
-       
+    public static String normalizeUsername(String username) {
+        if (username == null || username.trim().isEmpty()) {
+            return "Unknown Player";
+        }
+        return username.trim();
+    }
 }

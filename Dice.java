@@ -1,6 +1,17 @@
 public class Dice {
     private int value = 1;
 
+    public Dice(int value) {
+        if (value < 1 || value > 6) {
+            throw new IllegalArgumentException("Dice value must be between 1 and 6.");
+        }
+        this.value = value;
+    }
+
+    public Dice() {
+      
+    }
+
     private static final String[][] diceArt = {
       {
         "+-------+",

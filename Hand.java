@@ -18,6 +18,18 @@ public class Hand {
         }
     }
 
+    Hand(int... values) {
+    diceList = new ArrayList<>();
+    unused = new ArrayList<>();
+    meld = new Meld();
+
+    for (int value : values) {
+        Dice die = new Dice(value);
+        diceList.add(die);
+        unused.add(die);
+    }
+}
+
     public void rollAllDice() {
         for (Dice die : diceList) {
             die.roll();

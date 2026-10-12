@@ -5,4 +5,4 @@
 **Current Assignment:** HW1
 
 This repository contains my implementation of the Gonzaga Farkle project for CPSC 224.  
-Current assignment: HW1
+Current assignment: HW2

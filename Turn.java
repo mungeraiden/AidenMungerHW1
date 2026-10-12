@@ -35,6 +35,10 @@ public class Turn {
     }
 
     public void bank() {
+        if (!turnActive) {
+            System.out.println("Turn over! You cannot bank any points...");
+            return;
+        }
         int meldScore = Score.calculate(hand.getMeld());
 
         if (meldScore == 0) {
@@ -101,6 +105,10 @@ public class Turn {
         System.out.println("Quitting turn.");
         System.out.println("Total score: " + totalScore);
         turnActive = false;
+    }
+
+    public boolean isTurnActive() {
+        return turnActive;
     }
 
 }

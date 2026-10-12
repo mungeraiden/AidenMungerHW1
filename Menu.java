@@ -15,7 +15,7 @@ public class Menu {
             System.out.println("C - Show current meld");
             System.out.println("D - Show unused dice");
             System.out.println("E - Bank points");
-            System.out.println("R- Reroll unused dice");
+            System.out.println("R - Reroll unused dice");
             System.out.println("Q - Quit");
             System.out.print("Choose an option: ");
 
@@ -74,6 +74,9 @@ public class Menu {
 
                 case "R":
                     turn.reroll();
+                    if (!turn.isTurnActive()) {
+                        running = false;
+                    }
                     break;
 
                 default:
